@@ -32,6 +32,10 @@
   object-fit: cover;
   object-position: center center;
 }
+.cards h2 {
+  width: 100%;
+  height: 3em;
+}
 
 #row-one {
   grid-template-columns: 1fr 1fr 1fr 1.5fr;
@@ -40,14 +44,7 @@
 
 #row-two {
   grid-template-columns: repeat(4, 1fr);
-}
-#row-two .cards {
-  /*width: 100%;*/
-  min-height: 150px;
-}
-#row-two img {
-  width: auto;
-  max-height: 150px;
+  grid-template-rows: minmax(10vh, 20vh);
 }
 
 .icons {
@@ -55,21 +52,37 @@
   height: 100%;
   display: flex;
   align-items: center;
-  align-items: center;
   justify-content: center;
 }
 .icons img {
   width: auto;
-  height: 50px;
+  height: 3.5em;
 }
 
-img [src="europa.png"] {
+.png {
   align-items: end;
   justify-content: right;
-  padding: 30px;
+}
+.png img {
+  margin: 0 15px 15px 0;
 }
 
-/*@import "test-grid.scss";*/
+.eighty {
+  justify-content: center;
+}
+.eighty img {
+  width: auto;
+  height: 80%;
+}
+
+.justifybtwn {
+  justify-content: space-between;
+}
+
+.big-icon {
+  margin-top: 0.5em;
+}
+
 /* MENU */
 header {
   width: 100%;
@@ -100,7 +113,6 @@ header a {
 }
 header a:hover {
   background-color: #41186b;
-  background-color: #41186b;
   box-shadow: inset 0 -5px 0 #FF3680;
 }
 
@@ -118,12 +130,49 @@ header a:hover {
 }
 
 /* MEDIA */
-@media all and (max-width: 768px) {
-  #flex {
-    padding: 30px 0;
+@media all and (max-width: 1150px) {
+  header nav {
+    width: 30%;
+    height: 100%;
   }
-  #row-one, #row-two {
+  header ul {
+    flex-direction: column;
+  }
+  header a {
+    text-align: left;
+    padding-left: 1em;
+  }
+  #row-one {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 65vh 65vh;
+  }
+  #row-two {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 35vh 35vh;
+  }
+  .icons img {
+    width: auto;
+    height: 6.5em;
+  }
+  .png {
+    align-items: center;
+    justify-content: center;
+  }
+  .png img {
+    margin: 0;
+  }
+}
+@media all and (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+  }
+  #row-one {
     grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 65vh);
+  }
+  #row-two {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 35vh);
   }
   nav {
     display: none;
@@ -132,6 +181,7 @@ header a:hover {
     display: block;
   }
 }
+/* ANIMATION COLOR BACKGROUND ON BODY */
 @keyframes bgcolor {
   0% {
     background-color: #9a34f9;

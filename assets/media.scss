@@ -13,9 +13,26 @@
             padding-left: 1em;
         }
     }
-    #row-one, #row-two{
+    #row-one{
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: minmax(5vh, 15vh) minmax(5vh, 15vh);
+        grid-template-rows: 65vh 65vh;
+    }
+    #row-two{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 35vh 35vh;
+    }
+    .icons{
+        img{
+            width: auto;
+            height: 6.5em;
+        }
+    }
+    .png{
+        align-items: center;
+        justify-content: center;
+        img{
+            margin: 0;
+        }
     }
 }
 @media all and (max-width: 768px)
@@ -23,7 +40,11 @@
     .wrapper{
         width: 100%;
     }
-    #row-one, #row-two{
+    #row-one{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 65vh);
+    }
+    #row-two{
         grid-template-columns: 1fr;
         grid-template-rows: repeat(4, 35vh);
     }
